@@ -40,9 +40,11 @@ install:
       which cmake || brew install cmake
     fi
 
-script:
+build_script:
   - mkdir build
   - cd build
-  - cmake ../src -DCMAKE_BUILD_TYPE=$BUILD_CONFIGURATION -DTARGET_CPU=$TARGET_CPU
-  - cmake --build .
-  - ctest --output-on-failure
+  - cmake ../src %CMAKE_CONFIGURE_FLAGS%
+  - cmake --build . %CMAKE_BUILD_FLAGS% 
+
+test_script:
+  - ctest -C %CONFIGURATION% --output-on-failure
