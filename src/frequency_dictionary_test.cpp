@@ -29,6 +29,10 @@ TEST(FrequencyDictionaryTest, UpdateTextToLowerCaseShouldUpdateAllLetterToLowerC
 
   ASSERT_EQ(expected_string, frequency_dictionary.GetText());
 }
+
+TEST(FrequencyDictionaryTest, CheckCi) {
+  ASSERT_EQ(true, false);
+}
 } // namespace
 
 } // namespace frequency_dictionary
